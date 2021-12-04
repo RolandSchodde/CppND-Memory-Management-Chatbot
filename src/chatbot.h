@@ -28,7 +28,11 @@ public:
 
   //// STUDENT CODE
   ////
-
+  // TODO:Maybe implement Copy Constructor and Copy Assignment Operator later
+  ChatBot(ChatBot &) = delete;
+  ChatBot &operator=(ChatBot &) = delete;
+  ChatBot(ChatBot &&);
+  ChatBot &operator=(ChatBot &&);
   ////
   //// EOF STUDENT CODE
 
