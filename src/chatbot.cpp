@@ -53,7 +53,9 @@ ChatBot::ChatBot(ChatBot &&source) {
   _currentNode = source._currentNode;
   _rootNode = source._rootNode;
   _chatLogic = source._chatLogic;
-  source._image = nullptr;
+  _chatLogic->SetChatbotHandle(this);
+
+  source._image = NULL;
   source._currentNode = nullptr;
   source._rootNode = nullptr;
   source._chatLogic = nullptr;
@@ -65,14 +67,14 @@ ChatBot &ChatBot::operator=(ChatBot &&source) {
     return *this;
 
   delete _image;
-  delete _currentNode;
-  delete _rootNode;
-  delete _chatLogic;
+
   _image = source._image;
   _currentNode = source._currentNode;
   _rootNode = source._rootNode;
   _chatLogic = source._chatLogic;
-  source._image = nullptr;
+  _chatLogic->SetChatbotHandle(this);
+
+  source._image = NULL;
   source._currentNode = nullptr;
   source._rootNode = nullptr;
   source._chatLogic = nullptr;
